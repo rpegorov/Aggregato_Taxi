@@ -1,7 +1,7 @@
 import driver.Car;
 import service.Location;
 
-public class TextDisplay {
+public class TextDisplay extends Display {
 
     public void init() {
         System.out.println("Starting new simulation");

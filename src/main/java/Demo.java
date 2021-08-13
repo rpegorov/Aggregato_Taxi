@@ -8,7 +8,7 @@ public class Demo {
     public static void main(String[] args) {
 
         Platform pf = new Platform();
-        //Display disp = new TextDisplay();
+        Display displ = new TextDisplay();
         Display disp = new SwingDisplay();
 
         App app = new App(pf, disp);
@@ -31,7 +31,7 @@ public class Demo {
         for(Fleet fleet: fleets) {
             for (int i = 0; i < 5; i++) {
                 fleet.addCar(20 + i); // add cars, assigning max speed to each car
-            }
+            }aw drive
 
             ArrayList<? extends Car> cars = fleet.getCars();
             for (int i = 0; i < cars.size(); i++) {
@@ -45,8 +45,8 @@ public class Demo {
 
         // This will be replaced by callbacks from Display once the UI is in place
 
-        //disp.requestTrip(new Location(10, 10), new Location(200,200));
-        //disp.requestTrip(new Location(250, 100), new Location(100,300));
+        disp.requestTrip(new Location(10, 10), new Location(200,200));
+        disp.requestTrip(new Location(250, 100), new Location(100,300));
 
     }
 }
