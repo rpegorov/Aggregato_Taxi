@@ -31,7 +31,7 @@ public class Demo {
         for(Fleet fleet: fleets) {
             for (int i = 0; i < 5; i++) {
                 fleet.addCar(20 + i); // add cars, assigning max speed to each car
-            }aw drive
+            }
 
             ArrayList<? extends Car> cars = fleet.getCars();
             for (int i = 0; i < cars.size(); i++) {
