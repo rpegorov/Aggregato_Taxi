@@ -1,8 +1,11 @@
+package display;
+
 import driver.Car;
+import resources.App;
 import service.Location;
 
 public abstract class Display {
-    // needed for 2-way communication between App and Display
+    // needed for 2-way communication between resources.App and display.Display
 
     App app;
 

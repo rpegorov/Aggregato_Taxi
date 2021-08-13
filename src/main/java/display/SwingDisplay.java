@@ -1,3 +1,5 @@
+package display;
+
 import driver.Car;
 import service.Location;
 
@@ -10,6 +12,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class SwingDisplay extends Display {
+
     private JFrame frame;
     private JPanel canvas = null;
     private Color[] colors = {Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW,
@@ -126,7 +129,7 @@ public class SwingDisplay extends Display {
             }
         });
 
-        // Display the window.
+        // display.Display the window.
         frame.pack();
         frame.setVisible(true); // starts EDT if not already started
         // EDT continues until explicitly terminated with exit (or exception)

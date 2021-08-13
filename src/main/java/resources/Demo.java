@@ -1,3 +1,7 @@
+package resources;
+
+import display.Display;
+import display.SwingDisplay;
 import driver.Fleet;
 import service.Car;
 import service.Location;
@@ -8,7 +12,7 @@ public class Demo {
     public static void main(String[] args) {
 
         Platform pf = new Platform();
-        Display displ = new TextDisplay();
+//        display.Display displ = new display.TextDisplay();
         Display disp = new SwingDisplay();
 
         App app = new App(pf, disp);
@@ -17,11 +21,11 @@ public class Demo {
 
         // repeat the following for each fleet to be added,
         {
-            Fleet f1 = new Fleet("blue"); // note: colour currently not used by Display
+            Fleet f1 = new Fleet("blue"); // note: colour currently not used by display.Display
             pf.addFleet(f1);
             fleets.add(f1);
 
-            f1 = new Fleet("blue"); // note: colour currently not used by Display
+            f1 = new Fleet("blue"); // note: colour currently not used by display.Display
             pf.addFleet(f1);
             fleets.add(f1);
         }
@@ -43,7 +47,7 @@ public class Demo {
         // start the app - populate the display and run the simulation
         app.init();
 
-        // This will be replaced by callbacks from Display once the UI is in place
+        // This will be replaced by callbacks from display.Display once the UI is in place
 
         disp.requestTrip(new Location(10, 10), new Location(200,200));
         disp.requestTrip(new Location(250, 100), new Location(100,300));

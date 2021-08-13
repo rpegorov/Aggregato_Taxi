@@ -1,3 +1,6 @@
+package resources;
+
+import display.Display;
 import driver.Car;
 import service.Location;
 import service.Trip;
@@ -15,7 +18,7 @@ public class App {
         disp.setApp(this);
     }
 
-    // called by Display when user requests a trip
+    // called by display.Display when user requests a trip
     public void handleTripRequest(Location start, Location dest) {
         Trip newTrip = new Trip(start, dest);
         platform.assignCar(newTrip);

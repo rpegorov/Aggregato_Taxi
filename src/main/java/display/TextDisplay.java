@@ -1,3 +1,5 @@
+package display;
+
 import driver.Car;
 import service.Location;
 
@@ -14,6 +16,6 @@ public class TextDisplay extends Display {
     }
 
     public void drawLine(Location a, Location b) {
-        System.out.println("Line from " + a + " to " + b);
+        System.out.println("display.Line from " + a + " to " + b);
     }
 }
