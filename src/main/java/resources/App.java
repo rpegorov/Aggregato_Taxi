@@ -27,18 +27,15 @@ public class App {
     // initilize the app - updates the initial state of the display and starts a thread
     // to simulate movement of cars
     public void init() {
-
         disp.init();
-
         ArrayList<Car> cars = platform.findCars();
-        for(Car car: cars) {
+        for (Car car: cars) {
             disp.draw(car);
         }
 
-
         Thread simulator = new Thread(new Runnable() {
             public void run() {
-                for(int i =0;i<1000;i++) {
+                for (int i =0; i<1000; i++) {
                     try {
                         Thread.sleep(timeStep);
                     } catch (InterruptedException e) {
@@ -51,7 +48,6 @@ public class App {
             }
         });
         simulator.start();
-
     }
 
     private void updateDisplay() {
@@ -62,7 +58,7 @@ public class App {
             // if OnTrip, draw line from current location to drop point
             // else from current location to destination.
             // Use disp.drawLine(loc1, loc2);
-            switch(car.getStatus()) {
+            switch (car.getStatus()) {
                 case Car.Booked:
                     disp.drawLine(car.getLocation(), car.getTrip().getStart());
                     break;
@@ -76,8 +72,8 @@ public class App {
 
     private void updateLocations() {
         ArrayList<Car> cars = platform.findCars();
-        for(Car car: cars) {
-            car.updateLocation(timeStep/1000.0);
+        for (Car car: cars) {
+            car.updateLocation(timeStep / 1000.0);
         }
     }
 }

@@ -39,7 +39,6 @@ public class SwingDisplay extends Display {
         });
     }
 
-
     @Override
     public void draw(Car car) {
         // TODO Auto-generated method stub
@@ -54,7 +53,7 @@ public class SwingDisplay extends Display {
 
     @Override
     public void update() {
-        if(canvas != null) {
+        if (canvas != null) {
             canvas.repaint();
         }
     }
@@ -71,12 +70,12 @@ public class SwingDisplay extends Display {
                 super.paintComponent(g);
                 int i = 0;
                 for(Car car: cars) {
-                    g.setColor(colors[i%6]);
+                    g.setColor(colors[i % 6]);
                     i++;
                     Location loc = car.getLocation();
                     g.drawOval(loc.getX(), loc.getY(), 10, 10);
                     g.drawString("" + car.getId() + "-"
-                            +	car.getStatus(), loc.getX(), loc.getY() );
+                            +	car.getStatus(), loc.getX(), loc.getY());
                 }
                 for(Line line: lines) {
                     g.setColor(colors[i%6]);

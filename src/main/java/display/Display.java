@@ -6,11 +6,9 @@ import service.Location;
 
 public abstract class Display {
     // needed for 2-way communication between resources.App and display.Display
-
     App app;
 
     public Display() {
-
     }
 
     public void setApp(App a) {
@@ -20,14 +18,11 @@ public abstract class Display {
     // Will be called by app at init time - and before call to any other display method
     // Derived call can override this and do any initialization needed
     public void init() {
-
     }
 
     // v4 - added
     // Can be used by app to make any updates needed by the derived classes
     public void update() {
-
-
     }
 
     public void requestTrip(Location start, Location dest) {

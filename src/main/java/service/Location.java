@@ -6,8 +6,8 @@ public class Location {
     private int y;
 
     public Location(int a, int b) {
-        this.x=a;
-        this.y=b;
+        this.x = a;
+        this.y = b;
     }
 
     public void set(int a, int b) {
@@ -25,6 +25,5 @@ public class Location {
 
     public String toString() {
         return "(" + getX() + ", " + getY() + ")";
-
     }
 }

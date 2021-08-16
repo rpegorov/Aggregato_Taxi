@@ -32,7 +32,7 @@ public class Demo {
 
         // instantiate cars for the fleets
         int j = 1;
-        for(Fleet fleet: fleets) {
+        for (Fleet fleet: fleets) {
             for (int i = 0; i < 5; i++) {
                 fleet.addCar(20 + i); // add cars, assigning max speed to each car
             }
@@ -51,6 +51,5 @@ public class Demo {
 
         disp.requestTrip(new Location(10, 10), new Location(200,200));
         disp.requestTrip(new Location(250, 100), new Location(100,300));
-
     }
 }

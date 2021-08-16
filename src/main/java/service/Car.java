@@ -3,7 +3,6 @@ package service;
 public abstract class Car {
 
     private int id;
-
     protected int maxSpeed;
     public static final int Idle = 1;
     public static final int Booked = 2;

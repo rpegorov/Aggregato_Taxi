@@ -19,13 +19,12 @@ public class Fleet extends service.Fleet {
     public void addCar(int speed) {
         int temp  = this.getId();
         int x = carId;
-        while(x > 0)
-        {
+        while(x > 0) {
             temp = temp * 10;
             x /= 10;
         }
         temp += carId;
-        cars.add(new driver.Car(temp,speed));
+        cars.add(new driver.Car(temp, speed));
         carId++;
     }
 
@@ -33,12 +32,9 @@ public class Fleet extends service.Fleet {
     public Car findNearestCar(Location loc) {
         Car min = null;
         double temp = Double.POSITIVE_INFINITY;
-        for(Car c: cars)
-        {
-            if(c.getStatus() == 1)
-            {
-                if(Math.sqrt(c.distSqrd(loc)) < temp)
-                {
+        for (Car c: cars) {
+            if (c.getStatus() == 1) {
+                if (Math.sqrt(c.distSqrd(loc)) < temp) {
                     temp = Math.sqrt(c.distSqrd(loc));
                     min = c;
                 }

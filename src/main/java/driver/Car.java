@@ -68,44 +68,33 @@ public class Car extends service.Car {
     @Override
     public void updateLocation(double deltaT) {
         int x = myLocation.getX(), y = myLocation.getY();
-        if(myStatus == Idle)
-        {
+        if (myStatus == Idle) {
             return;
-        }
-        else if(myStatus == Booked)
-        {
+        } else if(myStatus == Booked) {
             int xe = myTrip.getStart().getX();
             int ye = myTrip.getStart().getY();
-            double dist = Math.hypot(xe-x,ye-y);
-            if(maxSpeed*deltaT >= dist)
-            {
+            double dist = Math.hypot(xe - x, ye - y);
+            if(maxSpeed*deltaT >= dist) {
                 this.setStatus(OnTrip);
                 x = xe;
                 y = ye;
+            } else {
+                x += ((xe - x) / dist) * maxSpeed*deltaT;
+                y += ((ye - y) / dist) * maxSpeed*deltaT;
             }
-            else
-            {
-                x += ((xe-x) / dist) *maxSpeed*deltaT;
-                y += ((ye-y) / dist) *maxSpeed*deltaT;
-            }
-        }
-        else
-        {
+        } else {
             int xe = myTrip.getDest().getX();
             int ye = myTrip.getDest().getY();
-            double dist = Math.hypot(xe-x,ye-y);
-            if(maxSpeed*deltaT >= dist)
-            {
+            double dist = Math.hypot(xe - x,ye - y);
+            if (maxSpeed*deltaT >= dist) {
                 this.setStatus(Idle);
                 x = xe;
                 y = ye;
-            }
-            else
-            {
-                x += ((xe-x)/dist)*maxSpeed*deltaT;
-                y += ((ye-y)/dist)*maxSpeed*deltaT;
+            } else {
+                x += ((xe - x) / dist) * maxSpeed * deltaT;
+                y += ((ye - y) / dist) * maxSpeed * deltaT;
             }
         }
-        myLocation.set(x,y);
+        myLocation.set(x, y);
     }
 }
